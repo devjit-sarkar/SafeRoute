@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generate OTP</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+    <script src="test1.js"></script>
+    <script
+      type="text/javascript"
+      src = "index1.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        emailjs.init("L4THGfZrY_m88Jmwc");
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 p-5 bg-primary text-white">
+        </div>
+        <div class="col-md-6 border-left py-3">
+          <h1>Generate OTP</h1>
+          <h2></h2>
+          <div class="form-group">
+            <h5 for="name">Name :</h5>
+            <input
+              type="text"
+              class="form-control"
+              id="name"
+              placeholder="Enter name"
+            />
+          </div>
+          <div class="form-group">
+            <h5 for="name">Phone :</h5>
+            <input
+              type="number"
+              class="form-control"
+              id="phone"
+              placeholder="Enter number"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <h5 for="email">Email :</h5>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Enter email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <h5 class="msg" for="message">Message</h5>
+            <textarea class="form-control" id="message" rows="3"></textarea>
+          </div>
+          <button class="btn btn-primary" onclick="sendMail()">Generate OTP</button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

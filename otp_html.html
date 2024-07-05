@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>OTP VALIDATOR</title>
+  <link rel="stylesheet" href="otp_css.css">
+  <script src = "index.js" ></script>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>Verification</h1>
+      <img src="profile_pic_otp.png" width="100px">
+    </div>
+    <div class="input">
+      <p>Enter the OTP you received at</p>
+      <b>xyz@gmail.com</b>
+      <div>
+        <div id="timer">your OTP will expire in 01:00 </div>
+      </div>
+      <div id="resend"><a href ="otp_html.html" class="button">resend</a></div>
+      <div id="inotp" class="inputs">
+        <input type="number" />
+        <input type="number" disabled />
+        <input type="number" disabled />
+        <input type="number" disabled />
+      </div>
+    </div>
+    <div class="btn">
+      <button type="button" id="btv" onclick="VerifyOTP()">Verify</button>
+    </div>
+    <script>
+      function VerifyOTP(){
+        const inputs = document.querySelectorAll("input");
+        const otp1 = ((inputs[0].value * 1000) + (inputs[1].value * 100) + (inputs[2].value * 10) + (inputs[3].value * 1));
+        console.log(`otp is aaaaaa ${otp1}`);
+        const storedOTP = localStorage.getItem('otp'); // Retrieve OTP from localStorage
+        console.log(storedOTP);
+        if (otp1 == storedOTP) {
+            console.log('OTP verified successfully.');
+            alert('OTP verified successfully.');
+            setTimeout(function() {
+              window.location.href = 'https://www.google.com';
+          }, 1000);
+        } else {
+            console.log('Invalid OTP.');
+            alert('Invalid OTP.');
+        }
+      }
+    </script>
+  </div>
+  <script src="otp_js.js"></script>
+</body>
+</html>
+
+
+ 
+         
+ 
